@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import pe.sblm.intranet.model.DocumentoRecomendacion;
 
 public interface DocumentoRecomendacionRepositorio  extends JpaRepository<DocumentoRecomendacion, Long> {
-	
-	List<DocumentoRecomendacion> findAllByIdRecomendacion(Long idRecomendacion);
+
+	List<DocumentoRecomendacion> findAllByNumeroAndIdPlan(int numero, long idPlan);
 	
 }

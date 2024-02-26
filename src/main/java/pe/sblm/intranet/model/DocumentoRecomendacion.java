@@ -6,13 +6,17 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.springframework.beans.factory.annotation.Value;
+
 @Entity
 public class DocumentoRecomendacion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+ 
+    private int numero;
     
-    private Long idRecomendacion;
+    private long idPlan;
     
     @Column(length = 200)
     private String urlDocumento;
@@ -26,14 +30,23 @@ public class DocumentoRecomendacion {
     public DocumentoRecomendacion() {
     	
     }
-    
-	public DocumentoRecomendacion(Long idRecomendacion, String urlDocumento, String nombreDocumento,
+
+	public DocumentoRecomendacion(int numero, long idPlan, String urlDocumento, String nombreDocumento,
 			String fechaDocumento) {
 		super();
-		this.idRecomendacion = idRecomendacion;
+		this.numero = numero;
+		this.idPlan = idPlan;
 		this.urlDocumento = urlDocumento;
 		this.nombreDocumento = nombreDocumento;
 		this.fechaDocumento = fechaDocumento;
+	}
+
+	public long getIdPlan() {
+		return idPlan;
+	}
+
+	public void setIdPlan(long idPlan) {
+		this.idPlan = idPlan;
 	}
 
 	public String getNombreDocumento() {
@@ -52,15 +65,13 @@ public class DocumentoRecomendacion {
 		this.id = id;
 	}
 
-	public Long getIdRecomendacion() {
-		return idRecomendacion;
+	public int getNumero() {
+		return numero;
 	}
 
-
-	public void setIdRecomendacion(Long idRecomendacion) {
-		this.idRecomendacion = idRecomendacion;
+	public void setNumero(int numero) {
+		this.numero = numero;
 	}
-
 
 	public String getFechaDocumento() {
 		return fechaDocumento;

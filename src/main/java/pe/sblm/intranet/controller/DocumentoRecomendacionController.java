@@ -22,9 +22,9 @@ public class DocumentoRecomendacionController {
 	@Autowired
     private DocumentoRecomendacionRepositorio documentoRecomendacionRepository;
 	
-	@GetMapping("/{idRecomendacion}")
-    public ResponseEntity<List<DocumentoRecomendacion>> obtenerDocumentosPorIdRecomendacion(@PathVariable Long idRecomendacion) {
-        List<DocumentoRecomendacion> documentos = documentoRecomendacionRepository.findAllByIdRecomendacion(idRecomendacion);
+	@GetMapping("/{numero}/{idPlan}")
+    public ResponseEntity<List<DocumentoRecomendacion>> obtenerDocumentosPorNumero(@PathVariable int numero, @PathVariable long idPlan) {
+        List<DocumentoRecomendacion> documentos = documentoRecomendacionRepository.findAllByNumeroAndIdPlan(numero, idPlan);
         return new ResponseEntity<>(documentos, HttpStatus.OK);
     }
 }

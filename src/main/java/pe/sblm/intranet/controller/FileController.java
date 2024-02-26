@@ -62,8 +62,8 @@ public class FileController {
         }
     }
     
-    @PostMapping(value="/recomendation/{tipo}/{idRecomendacion}/{fecha}")
-    public ResponseEntity<String> uploadFileRecomendacion(@RequestParam("file") MultipartFile file, @PathVariable String tipo,  @PathVariable Long idRecomendacion, @PathVariable String fecha) {
+    @PostMapping(value="/recomendation/{tipo}/{numero}/{idPlan}/{fecha}")
+    public ResponseEntity<String> uploadFileRecomendacion(@RequestParam("file") MultipartFile file, @PathVariable String tipo,  @PathVariable int numero, @PathVariable long idPlan, @PathVariable String fecha) {
         try {
             File directory = new File(uploadDir + "/" + tipo);
             if (!directory.exists()) {
@@ -74,7 +74,7 @@ public class FileController {
             Path targetLocation = Paths.get(uploadDir + "/" + tipo).resolve(fileName);
             Files.copy(file.getInputStream(), targetLocation, StandardCopyOption.REPLACE_EXISTING);
             
-            DocumentoRecomendacion documentoRec = new DocumentoRecomendacion(idRecomendacion, urlDoc + "/" + tipo + "/" + fileName, file.getOriginalFilename(), fecha);
+            DocumentoRecomendacion documentoRec = new DocumentoRecomendacion(numero, idPlan, urlDoc + "/" + tipo + "/" + fileName, file.getOriginalFilename(), fecha);
             this.documentoRecomendacionRepository.save(documentoRec);
 
             return ResponseEntity.ok(urlDoc + "/" + tipo + "/" + fileName);
