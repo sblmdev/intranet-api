@@ -13,7 +13,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/usuarios")
 @CrossOrigin(origins = "*")
-public class UsuarioController {
+public class UsuarioControlador {
 
     @Autowired
     private UsuarioRepositorio usuarioRepository;

@@ -22,7 +22,7 @@ import pe.sblm.intranet.repository.TipoPublicacionRepositorio;
 @RestController
 @RequestMapping("/api/tipoPublicaciones")
 @CrossOrigin(origins = "*")
-public class TipoPublicacionController {
+public class TipoPublicacionControlador {
 	
 	@Autowired
     private TipoPublicacionRepositorio tipoPublicacionRepository;

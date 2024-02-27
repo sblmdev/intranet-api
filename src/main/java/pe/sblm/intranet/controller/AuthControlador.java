@@ -20,9 +20,9 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/auth")
 @CrossOrigin(origins = "*")
-public class AuthController {
+public class AuthControlador {
 
-    private static final Logger logger = LoggerFactory.getLogger(AuthController.class);
+    private static final Logger logger = LoggerFactory.getLogger(AuthControlador.class);
     private static final String LDAP_URL = "ldap://192.168.1.5:389";
     private static final String LDAP_PRINCIPAL_SUFFIX = "@benelima.pe";
 

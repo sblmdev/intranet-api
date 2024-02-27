@@ -22,7 +22,7 @@ import pe.sblm.intranet.repository.PlanRepositorio;
 @RestController
 @RequestMapping("/api/planes")
 @CrossOrigin(origins = "*")
-public class PlanController {
+public class PlanControlador {
 	
 	@Autowired
     private PlanRepositorio planRepository;

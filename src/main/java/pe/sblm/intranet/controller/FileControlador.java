@@ -27,7 +27,7 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/api/files")
 @CrossOrigin(origins = "*")
-public class FileController {
+public class FileControlador {
 	@Autowired
     private DocumentoRepositorio documentoRepository;
 	

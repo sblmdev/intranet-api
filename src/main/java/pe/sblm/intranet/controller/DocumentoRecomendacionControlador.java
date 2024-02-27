@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +18,7 @@ import pe.sblm.intranet.repository.DocumentoRecomendacionRepositorio;
 @RestController
 @RequestMapping("/api/documentosRec")
 @CrossOrigin(origins = "*")
-public class DocumentoRecomendacionController {
+public class DocumentoRecomendacionControlador {
 	
 	@Autowired
     private DocumentoRecomendacionRepositorio documentoRecomendacionRepository;
@@ -26,5 +27,11 @@ public class DocumentoRecomendacionController {
     public ResponseEntity<List<DocumentoRecomendacion>> obtenerDocumentosPorNumero(@PathVariable int numero, @PathVariable long idPlan) {
         List<DocumentoRecomendacion> documentos = documentoRecomendacionRepository.findAllByNumeroAndIdPlan(numero, idPlan);
         return new ResponseEntity<>(documentos, HttpStatus.OK);
+    }
+	
+	@DeleteMapping("/{id}")
+    public ResponseEntity<Void> eliminarDocumento(@PathVariable Long id) {
+		documentoRecomendacionRepository.deleteById(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 }

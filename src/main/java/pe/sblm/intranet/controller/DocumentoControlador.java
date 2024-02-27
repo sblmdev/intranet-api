@@ -18,7 +18,7 @@ import pe.sblm.intranet.repository.DocumentoRepositorio;
 @RestController
 @RequestMapping("/api/documentos")
 @CrossOrigin(origins = "*")
-public class DocumentoController {
+public class DocumentoControlador {
 	
 	@Autowired
     private DocumentoRepositorio documentoRepository;

@@ -18,7 +18,7 @@ import pe.sblm.intranet.service.EmailService;
 @RestController
 @RequestMapping("/api/email")
 @CrossOrigin(origins = "*")
-public class EmailController {
+public class EmailControlador {
 
     private final EmailService emailService;
     
@@ -26,7 +26,7 @@ public class EmailController {
     
     private final PublicacionRepositorio publicacionRepo;
     
-    public EmailController(EmailService emailService, UsuarioRepositorio usuarioRepo, PublicacionRepositorio publicacionRepo) {
+    public EmailControlador(EmailService emailService, UsuarioRepositorio usuarioRepo, PublicacionRepositorio publicacionRepo) {
     	this.emailService = emailService;
     	this.usuarioRepo = usuarioRepo;
     	this.publicacionRepo = publicacionRepo;

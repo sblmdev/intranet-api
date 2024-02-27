@@ -15,7 +15,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/publicaciones")
 @CrossOrigin(origins = "*")
-public class PublicacionController {
+public class PublicacionControlador {
 
     private final PublicacionRepositorio publicacionRepo;
     
@@ -23,7 +23,7 @@ public class PublicacionController {
     
     private final EmailService emailService;
     
-	public PublicacionController(PublicacionRepositorio publicacionRepo, DocumentoRepositorio documentoRepo,
+	public PublicacionControlador(PublicacionRepositorio publicacionRepo, DocumentoRepositorio documentoRepo,
 			EmailService emailService) {
 		super();
 		this.publicacionRepo = publicacionRepo;

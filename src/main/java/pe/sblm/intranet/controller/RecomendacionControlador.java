@@ -22,7 +22,7 @@ import pe.sblm.intranet.repository.RecomendacionRepositorio;
 @RestController
 @RequestMapping("/api/recomendaciones")
 @CrossOrigin(origins = "*")
-public class RecomendacionController {
+public class RecomendacionControlador {
 	@Autowired
     private RecomendacionRepositorio recomendacionRepository;
 

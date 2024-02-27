@@ -10,12 +10,12 @@ import java.util.Map;
 @RestController
 @RequestMapping("/api/trabajador")
 @CrossOrigin(origins = "*")
-public class TrabajadorController {
+public class TrabajadorControlador {
 
     private final TrabajadorService trabajadorService;
 
     @Autowired
-    public TrabajadorController(TrabajadorService trabajadorService) {
+    public TrabajadorControlador(TrabajadorService trabajadorService) {
         this.trabajadorService = trabajadorService;
     }
 

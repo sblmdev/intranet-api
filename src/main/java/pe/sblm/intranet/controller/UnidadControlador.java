@@ -22,7 +22,7 @@ import pe.sblm.intranet.repository.UnidadRepositorio;
 @RestController
 @RequestMapping("/api/unidades")
 @CrossOrigin(origins = "*")
-public class UnidadController {
+public class UnidadControlador {
     @Autowired
     private UnidadRepositorio unidadRepository;
 
